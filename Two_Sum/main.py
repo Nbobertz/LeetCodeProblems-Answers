@@ -30,3 +30,24 @@ if null == 1:
 else:
     exit()
 
+
+# here is an alternative method to two sum with O(N) runtime complexity and O(N) space complexity. This is normally the preffered approach
+# to achieve this we will be relying on a extremely powerful data structure called a hashMap, or in python just a dict
+input = [1,2,3,3,3,3,3,3,3,3,3,4,5,6,7,8,9,10,11,12,13]
+tar = 7
+
+# create a hashmap to act as a memory of previously visited numhers and their indexes. for lookup reasons Key = value, value = index
+previous_ints = dict()
+previous_ints[input[0]] = 0
+
+# iterate through the input while noting both the value, and index of each 
+for i,v in enumerate(input):
+    # check to see if our target value - our current value is a number we've seen before
+    if tar-v in previous_ints:
+        # if so, then we print the indexes and break
+        print(f'indexes {previous_ints[tar-v]} and {i} equal {tar}')
+        break
+    else:
+        # else, we write to the hashmap, importantly this will overwrite any identical values with the most recent index of that value,
+        # alternatively we could check to see if we have the value and then do nothing with an elif, and then have an else: pass
+        previous_ints[v] = i
