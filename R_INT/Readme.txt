@@ -1,0 +1,1 @@
+This little program is designed to convert a roman numeral into an integer. It is a popular Leet-Code easy problem and all you have to know how to do is calculate the Roman numeral and then convert that into an integer. A great starting problem.
